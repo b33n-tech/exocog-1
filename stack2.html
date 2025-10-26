@@ -4,55 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stack 2 – Modules</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="stack2.css">
 </head>
 <body>
-<h1>Stack 2 – Modules Action</h1>
 
-<div class="modules-container">
-  <div class="module" id="jalonsModule">
-    <h2>Jalons & Sous-actions</h2>
-    <ul id="jalonsList"></ul>
+<h1>Stack 2 – Modules</h1>
+
+<div class="container">
+  <div class="json-input-section">
+    <h2>Coller JSON traité par LLM</h2>
+    <textarea id="jsonInput" placeholder="Collez ici le JSON…"></textarea>
+    <button id="loadJsonBtn">Charger JSON</button>
   </div>
 
-  <div class="module" id="messagesModule">
-    <h2>Mails / Messages</h2>
-    <table id="messagesTable">
-      <thead>
-        <tr><th>À traiter</th><th>Destinataire</th><th>Sujet</th><th>Texte</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <select id="mailPromptSelect">
-      <option value="1">Template formel</option>
-      <option value="2">Template amical</option>
-    </select>
-    <button id="generateMailBtn">Push à un LLM</button>
-  </div>
+  <div class="modules-section">
+    <div class="module" id="jalonsModule">
+      <h2>Jalons & Sous-actions</h2>
+      <ul id="jalonsList"></ul>
+    </div>
 
-  <div class="module" id="rdvModule">
-    <h2>Rendez-vous / Sessions</h2>
-    <ul id="rdvList"></ul>
-  </div>
+    <div class="module" id="messagesModule">
+      <h2>Mails & Messages</h2>
+      <select id="mailPromptSelect">
+        <option value="1">Écris un email professionnel clair et concis pour :</option>
+        <option value="2">Écris un email amical et léger pour :</option>
+      </select>
+      <button id="generateMailBtn">Push à LLM</button>
+      <table id="messagesTable">
+        <thead><tr><th>✓</th><th>Destinataire</th><th>Sujet</th><th>Message</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
-  <div class="module" id="livrablesModule">
-    <h2>Livrables</h2>
-    <ul id="livrablesList"></ul>
-    <select id="livrablePromptSelect">
-      <option value="1">Plan détaillé</option>
-      <option value="2">Résumé exécutif</option>
-      <option value="3">Checklist rapide</option>
-    </select>
-    <button id="generateLivrableBtn">Push à un LLM</button>
-  </div>
-</div>
+    <div class="module" id="rdvModule">
+      <h2>RDV / Sessions</h2>
+      <ul id="rdvList"></ul>
+    </div>
 
-<div class="json-section">
-  <h2>Coller JSON</h2>
-  <textarea id="pasteJsonStack2" placeholder="Collez ici le JSON depuis Stack 1…"></textarea>
-  <button id="loadJsonBtn">Charger JSON</button>
+    <div class="module" id="livrablesModule">
+      <h2>Livrables</h2>
+      <select id="livrablePromptSelect">
+        <option value="1">Génère un plan détaillé pour :</option>
+        <option value="2">Génère un résumé exécutif pour :</option>
+        <option value="3">Génère une checklist rapide pour :</option>
+      </select>
+      <button id="generateLivrableBtn">Push à LLM</button>
+      <ul id="livrablesList"></ul>
+    </div>
+  </div>
 </div>
 
 <script src="stack2.js"></script>
 </body>
 </html>
+
