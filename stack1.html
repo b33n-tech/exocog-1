@@ -3,43 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stack 1 – Gestion des Tâches</title>
+<title>Stack 1 – Tâches & Prompts</title>
 <link rel="stylesheet" href="stack1.css">
 </head>
 <body>
 
-<h1>Stack 1 – Input & Gestion des Tâches</h1>
+<h1>Stack 1 – Gestion des tâches</h1>
 
-<div class="main-container">
-  <div class="input-section">
-    <input type="text" id="taskInput" placeholder="Ajouter une tâche…">
-    <button id="addBtn">Ajouter</button>
-  </div>
-
-  <div class="tasks-sidebar">
-    <h2>Tâches</h2>
-    <ul id="tasksContainer"></ul>
-    <div class="buttons-row"></div>
-  </div>
-
-  <div class="prompt-section">
-    <h2>Prompts / LLM</h2>
-    <select id="llmSelect">
-      <option value="https://chat.openai.com/">GPT</option>
-      <option value="https://perplexity.ai/">Perplexity</option>
-      <option value="https://claude.ai/">Claude</option>
-      <option value="https://mistral.ai/">Mistral</option>
-    </select>
-    <div id="promptsContainer"></div>
-    <div id="copiedMsg" style="display:none;">✅ Copié dans le presse-papier !</div>
-  </div>
-
-  <div class="batch-section">
-    <h2>Coller JSON LLM</h2>
-    <textarea id="batchInput" placeholder="Collez ici le JSON généré par le LLM…"></textarea>
-    <button id="pasteDownloadBtn">Envoyer ce batch</button>
-  </div>
+<div class="task-input">
+  <input type="text" id="taskInput" placeholder="Nouvelle tâche…">
+  <button id="addBtn">Ajouter</button>
 </div>
+
+<ul id="tasksContainer"></ul>
+
+<div class="buttons-row"></div>
+
+<div class="prompts" id="promptsContainer"></div>
+
+<select id="llmSelect">
+  <option value="https://chat.openai.com/">GPT</option>
+  <option value="https://perplexity.ai/">Perplexity</option>
+  <option value="https://claude.ai/">Claude</option>
+  <option value="https://www.mistral.ai/">Mistral</option>
+</select>
+
+<button id="pasteDownloadBtn">Coller JSON + Télécharger</button>
+<button id="pushToStack2">Envoyer à Stack 2</button>
+<p id="copiedMsg" style="display:none;">✅ Copié dans le presse-papiers !</p>
 
 <script src="stack1.js"></script>
 </body>
